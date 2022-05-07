@@ -5,7 +5,7 @@ export const Categories = ({items}) => {
     <div className="categories">
       <ul>
         <li className="active">Все</li>
-        {items.map((item, index) => <li key = {index}>{item}</li>)}
+        {items.map((item, index) => <li key = {`${index} text`}>{item}</li>)}
       </ul>
     </div>
   );

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import PropTypes  from 'prop-types';
 
 export const PizzaBlock = ({ name, price, imageUrl, types, id, sizes }) => {
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(sizes[0]);
+
+  // Нету нужды прокидывать если оно не меняеться, а создаю на месте**************************
   const typeNames = ['тонкое', 'традиционное'];
   const availableSize = [26, 30, 40]
 
@@ -62,3 +65,26 @@ export const PizzaBlock = ({ name, price, imageUrl, types, id, sizes }) => {
     </div>
   );
 };
+
+
+//Описываю тип пропсов которые прокидываю (библиотеку скачиваю prop-types)
+
+PizzaBlock.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  types: PropTypes.arrayOf(PropTypes.number).isRequired,
+  sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
+}
+
+//дефолтное значение в случае ошибки 
+
+PizzaBlock.defaultProps = {
+  id: Math.random(),
+  name: 'Название пиццы',
+  imageUrl: 'Картинка',
+  price: 0,
+  types: [],
+  sizes: [],
+}

@@ -8,8 +8,11 @@ import { Home, Cart } from "./pages/index";
 
 function App() {
   const [pizzas, setPizzas] = useState([])
+
+  // В App асинхронный запрос ************************************
+
   useEffect( () => {
-    fetch('http://myjson.dit.upm.es/api/bins/8vhz')
+    fetch('http://localhost:3000/pizza_react/db.json')
       .then( res => res.json())
       .then( json => setPizzas(json.pizzas) )
   }, [])

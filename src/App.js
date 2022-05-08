@@ -9,7 +9,7 @@ import { Home, Cart } from "./pages/index";
 function App() {
   const [pizzas, setPizzas] = useState([])
   useEffect( () => {
-    fetch('http://localhost:3000/pizza_react/db.json')
+    fetch('http://myjson.dit.upm.es/api/bins/8vhz')
       .then( res => res.json())
       .then( json => setPizzas(json.pizzas) )
   }, [])

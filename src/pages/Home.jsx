@@ -3,7 +3,6 @@ import { Categories, SortPopup } from '../components/index';
 import { PizzaBlock } from './index';
 
 export const Home = ({ pizzas }) => {
-    console.log(pizzas)
   return (
     <div className="container">
       <div className="content__top">
